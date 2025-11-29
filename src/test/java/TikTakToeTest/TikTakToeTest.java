@@ -3,6 +3,7 @@ import Tiktaktoe.TikTakToe;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TikTakToeTest {
@@ -53,6 +54,19 @@ public class TikTakToeTest {
         tikTakToe.setField(testField);
         tikTakToe.gewonnen(testField);
         assertTrue(tikTakToe.isGewonnen());
+
+    }
+    @Test
+    void testUentschieden(){
+        String [][] testField = {
+                {"x","o","x"},
+                {"x","x","o"},
+                {"o","x","o"}
+        };
+        tikTakToe.setField(testField);
+        tikTakToe.unentschieden(testField);
+        assertFalse(tikTakToe.isGewonnen());
+        assertTrue(tikTakToe.isUnentschieden());
 
     }
 }
