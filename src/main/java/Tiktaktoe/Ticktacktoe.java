@@ -1,10 +1,25 @@
 package Tiktaktoe;
 
+import java.util.Objects;
+
 public class Ticktacktoe {
     private String[][] field = new String[3][3];
     private boolean spieler1 = true;//true is "x" //false is "o"
     private boolean unentschieden = false;
     private boolean gewonnen = false;
+
+    public void werHatGewooen(){
+        String spieler;
+        if(this.spieler1){
+            spieler = "o";
+            System.out.println("Spieler "+spieler+" hat gewonnen");
+        }
+        else{
+            spieler = "x";
+            System.out.println("Spieler "+spieler+" hat gewonnen");
+
+        }
+    }
 
     public String aktuellerSpieler() {
         String spieler;
@@ -29,35 +44,40 @@ public class Ticktacktoe {
     }
 
     public void gewonnen(String[][] field) {
-        String x = "x";
-        String o = "o";
-        for (int i = 0; i < field.length; i++) {
-            if (field[0][i].equals(x) || field[1][i].equals(x) || field[2][i].equals(x)) {
-                System.out.println("Speiler: " + x + " hat gewonnen.");
-                this.gewonnen = true;
-
-            } else if (field[i][0].equals(x) || field[i][1].equals(x) || field[i][2].equals(x)) {
-                System.out.println("Speiler: " + x + " hat gewonnen.");
-                this.gewonnen = true;
-
-            } else if (field[0][0].equals(x) && field[1][1].equals(x) && field[2][2].equals(x) ||
-                    field[0][2].equals(x) && field[1][1].equals(x) && field[2][0].equals(x)) {
-                System.out.println("Speiler: " + x + " hat gewonnen.");
-                this.gewonnen = true;
-            } else if (field[i][0].equals(o) || field[i][1].equals(o) || field[i][2].equals(o)) {
-                System.out.println("Speiler: " + o + " hat gewonnen.");
-                this.gewonnen = true;
-            } else if (field[0][0].equals(o) && field[1][1].equals(o) && field[2][2].equals(o) ||
-                    field[0][2].equals(o) && field[1][1].equals(o) && field[2][0].equals(o)) {
-                System.out.println("Speiler: " + o + " hat gewonnen.");
-                this.gewonnen = true;
-            } else if (field[0][i].equals(o) || field[1][i].equals(o) || field[2][i].equals(o)) {
-                System.out.println("Speiler: " + o + " hat gewonnen.");
-                this.gewonnen = true;
+        this.gewonnen = false;
+        String[] spieler = {"x", "o"};
+        for (String player : spieler) {
+            for (int i = 0; i < field.length; i++) {
+                //Zeile prüfen
+                if (Objects.equals(player, field[i][0]) &&
+                        Objects.equals(player, field[i][1]) &&
+                        Objects.equals(player, field[i][2])) {
+                    this.gewonnen = true;
+                    return;
+                }
             }
+            //Spalte prüfen
+            for (int i = 0; i < field.length; i++) {
+                if (Objects.equals(player, field[0][i]) &&
+                        Objects.equals(player, field[1][i]) &&
+                        Objects.equals(player, field[2][i])) {
+                    this.gewonnen = true;
+                    return;
+                }
+            }
+            if (Objects.equals(player, field[0][0]) &&
+                    Objects.equals(player, field[1][1]) &&
+                    Objects.equals(player, field[2][2])||
+                    Objects.equals(player, field[0][2]) &&
+                    Objects.equals(player, field[1][1]) &&
+                    Objects.equals(player, field[2][0])) {
+                this.gewonnen = true;
+                return;
+            }
+        }
 
         }
-    }
+
 
     public void unentschieden(String[][] field) {
         boolean voll = true;

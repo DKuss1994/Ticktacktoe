@@ -20,10 +20,13 @@ public class Start {
             ticktacktoe.spielerZug(userQuestion.getZeile(),userQuestion.getSpalte(), ticktacktoe.getField());
             ticktacktoe.gewonnen(ticktacktoe.getField());
             if (ticktacktoe.isGewonnen()){
+                ticktacktoe.printField(ticktacktoe.getField());
+                ticktacktoe.werHatGewooen();
                 break;
             }
             ticktacktoe.unentschieden(ticktacktoe.getField());
             if (ticktacktoe.isUnentschieden()){
+                ticktacktoe.printField(ticktacktoe.getField());
                 break;
             }
 
