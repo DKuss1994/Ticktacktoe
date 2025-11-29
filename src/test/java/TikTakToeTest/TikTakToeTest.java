@@ -44,7 +44,7 @@ public class TikTakToeTest {
 
     }
     @Test
-    void testGewinnErkennungHorizontrale3(){
+    void testGewinnErkennungDiagonale2(){
         String [][] testField = {
                 {"x"," ","x"},
                 {" ","x","o"},
