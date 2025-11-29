@@ -2,7 +2,7 @@ package Tiktaktoe;
 
 import java.util.Objects;
 
-public class Ticktacktoe {
+public class TikTakToe {
     private String[][] field = new String[3][3];
     private boolean spieler1 = true;//true is "x" //false is "o"
     private boolean unentschieden = false;
@@ -81,9 +81,9 @@ public class Ticktacktoe {
 
     public void unentschieden(String[][] field) {
         boolean voll = true;
-        for (int i = 0; i < field.length; i++) {
+        for (String[] strings : field) {
             for (int i1 = 0; i1 < field.length; i1++) {
-                if (field[i][i1] == null || field[i][i1].trim().isEmpty()) {
+                if (strings[i1] == null || strings[i1].trim().isEmpty()) {
                     voll = false;
                     break;
                 }

@@ -6,9 +6,10 @@ public class UserQuestion {
     private int spalte;
     private int zeile;
     private boolean userEingabe;
+    Scanner sc = new Scanner(System.in);
 
     public void userEingabeSpalte(String spieler){
-        Scanner sc = new Scanner(System.in);
+
         System.out.print(spieler+" Gib eine Spalte ein(Von 1-3): ");
         byte spalte = sc.nextByte();
         setUserEingabe(spalte);

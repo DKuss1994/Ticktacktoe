@@ -2,31 +2,31 @@ package Tiktaktoe;
 
 public class Start {
     public void start(){
-        Ticktacktoe ticktacktoe = new Ticktacktoe();
-        ticktacktoe.creatField(ticktacktoe.getField());
+        TikTakToe tikTakToe = new TikTakToe();
+        tikTakToe.creatField(tikTakToe.getField());
         UserQuestion userQuestion = new UserQuestion();
         while(true){
-            ticktacktoe.printField(ticktacktoe.getField());
-            userQuestion.userEingabeZeile(ticktacktoe.aktuellerSpieler());
+            tikTakToe.printField(tikTakToe.getField());
+            userQuestion.userEingabeZeile(tikTakToe.aktuellerSpieler());
             if(!userQuestion.isUserEingabe()){
                 System.out.println("Falsche Eingabe");
                 continue;
             }
-            userQuestion.userEingabeSpalte(ticktacktoe.aktuellerSpieler());
+            userQuestion.userEingabeSpalte(tikTakToe.aktuellerSpieler());
             if(!userQuestion.isUserEingabe()){
                 System.out.println("Falsche Eingabe");
                 continue;
             }
-            ticktacktoe.spielerZug(userQuestion.getZeile(),userQuestion.getSpalte(), ticktacktoe.getField());
-            ticktacktoe.gewonnen(ticktacktoe.getField());
-            if (ticktacktoe.isGewonnen()){
-                ticktacktoe.printField(ticktacktoe.getField());
-                ticktacktoe.werHatGewooen();
+            tikTakToe.spielerZug(userQuestion.getZeile(),userQuestion.getSpalte(), tikTakToe.getField());
+            tikTakToe.gewonnen(tikTakToe.getField());
+            if (tikTakToe.isGewonnen()){
+                tikTakToe.printField(tikTakToe.getField());
+                tikTakToe.werHatGewooen();
                 break;
             }
-            ticktacktoe.unentschieden(ticktacktoe.getField());
-            if (ticktacktoe.isUnentschieden()){
-                ticktacktoe.printField(ticktacktoe.getField());
+            tikTakToe.unentschieden(tikTakToe.getField());
+            if (tikTakToe.isUnentschieden()){
+                tikTakToe.printField(tikTakToe.getField());
                 break;
             }
 
