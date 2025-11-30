@@ -71,4 +71,10 @@ public class TikTakToeTest {
         assertTrue(tikTakToe.isUnentschieden());
 
     }
+    @Test
+    void questionTest(){
+        String spieler = "x";
+        byte usereingabe = 1;
+        userQuestion.
+    }
 }

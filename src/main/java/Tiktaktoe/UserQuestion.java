@@ -16,7 +16,6 @@ public class UserQuestion {
         this.spalte = spalte-1;
     }
     public void userEingabeZeile(String spieler){
-        Scanner sc = new Scanner(System.in);
         System.out.print(spieler+" Gib eine Zeile ein(Von 1-3): ");
         byte zeile = sc.nextByte();
         setUserEingabe(zeile);
