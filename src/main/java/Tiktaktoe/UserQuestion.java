@@ -21,7 +21,7 @@ public class UserQuestion {
         setUserEingabe(zeile);
         this.zeile = zeile-1;
     }
-    private void setUserEingabe(byte zeileSpalte) {
+    public void setUserEingabe(byte zeileSpalte) {
         if (zeileSpalte < 1 || zeileSpalte > 3) {
             this.userEingabe = false;
         } else {
