@@ -21,7 +21,7 @@ public class Start {
             tikTakToe.gewonnen(tikTakToe.getField());
             if (tikTakToe.isGewonnen()){
                 tikTakToe.printField(tikTakToe.getField());
-                tikTakToe.werHatGewooen();
+                tikTakToe.werHatGewonnen();
                 break;
             }
             tikTakToe.unentschieden(tikTakToe.getField());

@@ -1,5 +1,6 @@
 package TikTakToeTest;
 import Tiktaktoe.TikTakToe;
+import Tiktaktoe.UserQuestion;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TikTakToeTest {
     TikTakToe tikTakToe = new TikTakToe();
+    UserQuestion userQuestion = new UserQuestion();
     @Test
     void testGewinnErkennungHorizontrale1(){
         String [][] testField = {

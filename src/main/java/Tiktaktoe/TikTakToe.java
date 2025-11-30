@@ -8,7 +8,7 @@ public class TikTakToe {
     private boolean unentschieden = false;
     private boolean gewonnen = false;
 
-    public void werHatGewooen(){
+    public void werHatGewonnen(){
         String spieler;
         if(this.spieler1){
             spieler = "o";

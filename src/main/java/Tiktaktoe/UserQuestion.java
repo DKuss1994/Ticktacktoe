@@ -9,7 +9,6 @@ public class UserQuestion {
     Scanner sc = new Scanner(System.in);
 
     public void userEingabeSpalte(String spieler){
-
         System.out.print(spieler+" Gib eine Spalte ein(Von 1-3): ");
         byte spalte = sc.nextByte();
         setUserEingabe(spalte);
