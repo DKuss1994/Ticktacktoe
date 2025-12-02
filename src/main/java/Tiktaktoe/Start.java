@@ -8,15 +8,9 @@ public class Start {
         while(true){
             tikTakToe.printField(tikTakToe.getField());
             userQuestion.userEingabeZeile(tikTakToe.aktuellerSpieler());
-            if(!userQuestion.isUserEingabe()){
-                System.out.println("Falsche Eingabe");
-                continue;
-            }
+
             userQuestion.userEingabeSpalte(tikTakToe.aktuellerSpieler());
-            if(!userQuestion.isUserEingabe()){
-                System.out.println("Falsche Eingabe");
-                continue;
-            }
+
             tikTakToe.spielerZug(userQuestion.getZeile(),userQuestion.getSpalte(), tikTakToe.getField());
             tikTakToe.gewonnen(tikTakToe.getField());
             if (tikTakToe.isGewonnen()){

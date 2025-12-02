@@ -88,7 +88,7 @@ public class TikTakToeTest {
     void questionTestChar(){
         String spieler = "x";
         char usereingabe = 'a';
-        userQuestion.setUserEingabe(usereingabe);
+        userQuestion.setUserEingabe((byte) usereingabe);
         assertFalse(userQuestion.isUserEingabe()) ;
     }
 }
